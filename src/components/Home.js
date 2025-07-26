@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
+
 const Home = () => {
   return (
     <section id="home" className="d-flex align-items-center" style={{ minHeight: '100vh', position: 'relative', zIndex: 1 }}>
@@ -38,9 +39,14 @@ Through the HPE Software Engineering Job Simulation and IBM SkillsBuild x Edunet
                 <Button href="https://github.com/varadaraju17" target="_blank" variant="outline-primary" className="me-3 social-btn-glow">
                   <FaGithub /> GitHub
                 </Button>
-                <Button href="/VARADARAJU_NY_Software_Engg_RESUME.pdf" target="_blank" variant="outline-primary" className="social-btn-glow">
-                  <FaFilePdf /> Resume
-                </Button>
+                <Button 
+  href={process.env.PUBLIC_URL + "/VARADARAJU_NY_Software_Engg_RESUME.pdf"} 
+  target="_blank" 
+  variant="outline-primary" 
+  className="social-btn-glow"
+>
+  <FaFilePdf /> Resume
+</Button>
               </div>
             </motion.div>
           </Col>
@@ -51,11 +57,14 @@ Through the HPE Software Engineering Job Simulation and IBM SkillsBuild x Edunet
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
              >
                 <Image 
-                    src="/profile-pic.jpg" 
-                    alt="Varadaraju NY" 
-                    className="profile-pic-glow"
-                    onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/400x400/000000/00FF00?text=VNY'; }}
-                />
+  src={process.env.PUBLIC_URL + "/profile-pic.jpg"} 
+  alt="Varadaraju NY" 
+  className="profile-pic-glow"
+  onError={(e) => { 
+    e.target.onerror = null; 
+    e.target.src='https://placehold.co/400x400/000000/00FF00?text=VNY'; 
+  }}
+/>
              </motion.div>
           </Col>
         </Row>
